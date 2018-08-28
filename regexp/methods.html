@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regular Expression Method</title>
+</head>
+<body>
+
+<dl>
+    <dt>RegExp Methods</dt>
+    <dd>RegExp.prototype.test()</dd>
+    <dd>RegExp.prototype.exec()</dd>
+    <dd>String.prototype.match()</dd>
+    <dd>String.prototype.search()</dd>
+    <dd>String.prototype.replace()</dd>
+</dl>
+
+
+<script>
+    // --------------------------------------------------------------------------------
+    // RegExp.prototype.test()
+    // --------------------------------------------------------------------------------
+    (function() {
+        var pattern = /[abc]/;
+        console.log(pattern.test('abc'));
+        console.log(pattern.test('123'));
+    })()
+</script>
+
+
+<script>
+    // --------------------------------------------------------------------------------
+    // RegExp.prototype.exec()
+    // --------------------------------------------------------------------------------
+    (function() {
+        var pattern = /[abc]/;
+
+        //[]
+        console.log(pattern.exec('123abc123abc123'));
+
+        // 不匹配时返回lnull
+        console.log(pattern.exec('123'));
+    })();
+
+
+    (function() {
+        var pattern = /(ab)(cd)e/;
+        console.log(pattern.exec('---abcdefg---abcdefg---'));
+    })();
+
+</script>
+
+
+<script>
+    // --------------------------------------------------------------------------------
+    // RegExp.prototype.exec()
+    // --------------------------------------------------------------------------------
+    console.log('----------string.prototype.match()----------');
+
+    (function() {
+        var pattern = /[abc]/;
+
+        //[]
+        console.log('123abc123abc123'.match(pattern));
+
+        // 不匹配时返回lnull
+        console.log('123'.match(pattern));
+    })();
+
+
+    (function() {
+        var pattern = /(ab)(cd)e/;
+        console.log('---abcdefg---abcdefg---'.match(pattern));
+    })();
+
+</script>
+
+
+</body>
+</html>

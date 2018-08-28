@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+
+  (function() {
+    function Person(name) {
+      this.name = name;
+    }
+    Person.prototype.sayName = function() {
+      console.log(this.name);
+    }
+    Person.prototype.toString = function() {
+      return '[Person ' + this.name + ']';
+    }
+    var p = new Person('ZhangSan');
+    console.log(p.constructor);
+  })();
+
+  (function() {
+    function Person(name) {
+      this.name = name;
+    }
+
+    Person.prototype = {
+
+      // 如果不加重新指定construct属性，对象字面量的构造函数是{}，
+      // 此时访问Person实例的constrcutor的时候，
+      // 会去找其原型（对象字面量定义的对象）上的constructor属性，得到的是Object。
+      // 因此，如果直接替换了构造函数的prototype，一定要修改其constructor属性的值。
+      constructor: Person,
+
+      sayName: function() {
+        console.log(this.name);
+      },
+
+      toString: function() {
+        return '[Person ' + this.name + ']';
+      }
+    }
+
+    var p = new Person('ZhangSan');
+    console.log(p.constructor);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>concat</title>
+</head>
+<body>
+
+<script>
+
+    var configs = [
+        [{id:1, name: 'LiuYi'}, {id:2, name: 'ChenEr'}],
+        [{id:3, name: 'ZhangSan'}, {id:4, name: 'LiSi'}]
+    ]
+
+
+    // 将二维数组转换为以为一维数组
+    function flatten(arr) {
+        return Array.prototype.concat.apply([], arr);
+    }
+
+    console.log(flatten(configs));
+
+</script>
+
+</body>
+</html>

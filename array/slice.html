@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice</title>
+</head>
+<body>
+
+<dl>
+    <dt>slice</dt>
+    <dd>slice</dd>
+</dl>
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+
+<script>
+
+    (function() {
+
+        console.log('-------------------- 简单示例 --------------------');
+        var arr = ['zero', 'one', 'two', 'three'];
+        var slicedArr = arr.slice(arr.length - 2, arr.length);
+
+        // 原数组不变
+        console.log(arr);
+
+        // ["one", "two"]
+        console.log(slicedArr);
+    })();
+
+
+    // (function() {
+    //
+    //     console.log('-------------------- --------------------');
+    //
+    //     //说明：
+    //     // slice
+    //
+    //     // OUTPUT
+    //     // myCar = [{color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2,
+    //     //    'cherry condition', 'purchased 1997']
+    //     // newCar = [{color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}}, 2]
+    //     // myCar[0].color = red
+    //     // newCar[0].color = red
+    //     // The new color of my Honda is purple
+    //     // myCar[0].color = purple
+    //     // newCar[0].color = purple
+    //
+    //
+    //     // 使用slice方法从myCar中创建一个newCar.
+    //     var myHonda = { color: 'red', wheels: 4, engine: { cylinders: 4, size: 2.2 } };
+    //     var myCar = [myHonda, 2, "cherry condition", "purchased 1997"];
+    //     var newCar = myCar.slice(0, 2);
+    //
+    //     // 输出myCar, newCar,以及各自的myHonda对象引用的color属性.
+    //     console.log('myCar = ' + JSON.stringify(myCar));
+    //     console.log('newCar = ' + JSON.stringify(newCar));
+    //     console.log('myCar[0].color = ' + JSON.stringify(myCar[0].color));
+    //     console.log('newCar[0].color = ' + JSON.stringify(newCar[0].color));
+    //
+    //     // 改变myHonda对象的color属性.
+    //     myHonda.color = 'purple';
+    //     console.log('The new color of my Honda is ' + myHonda.color);
+    //
+    //     // Slice的时候是浅拷贝，如果数组元素是引用类型，则两个数组都保存这个对象的引用，这个对象改变，两个数组都跟着改变。
+    //
+    //     //输出myCar, newCar中各自的myHonda对象引用的color属性.
+    //     console.log('myCar[0].color = ' + myCar[0].color);
+    //     console.log('newCar[0].color = ' + newCar[0].color);
+    //
+    // })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

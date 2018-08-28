@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple</title>
+</head>
+<body>
+
+<script>
+
+    // RegExp.prototype.exec()
+    // RegExp.prototype.test()
+
+    // String.prototype.match()
+    // String.prototype.replace()
+    // String.prototype.search()
+    // String.prototype.split()
+
+
+    (function(){
+
+        const paths = [
+            'variable/a.spec.ts',
+            'viewmodel/a.spec.ts',
+            'DataSource/b.spec.ts'
+        ]
+
+        //const pattern = /^.*\/?(?!.*(DataSource|viewmodel)).*$/;
+        //const pattern = /^(?=variable|data-set).*\.spec\.ts/;
+        const pattern = /^(?!variable|viewmodel).*\.spec\.ts/;
+
+
+
+        paths.forEach(path => {
+            const result = pattern.test(path);
+            console.log(path + ': ' + result);
+        });
+
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>splice</title>
+</head>
+<body>
+
+<dl>
+    <dt>splice</dt>
+    <dd>splice() 方法通过删除现有元素和/或添加新元素来更改一个数组的内容。</dd>
+    <dd>splice是直接在原数组上删除、插入元素</dd>
+    <dd>splice返回由被删除元素组成的数组</dd>
+    <dd>
+        <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">
+            MDN Array splice 参考
+        </a>
+    </dd>
+</dl>
+
+
+<script>
+
+
+
+    (function() {
+
+        console.log('-------------------- --------------------');
+
+        var numbers = [1, 2, 3, 4, 5, 6];
+
+        //从第 3 位开始删除 2 个元素
+        var removed = numbers.splice(3, 2);
+
+        //[1, 2, 3, 6]
+        console.log(numbers);
+
+        //[4, 5]
+        console.log(removed);
+
+    })();
+
+
+    (function() {
+
+        console.log('-------------------- --------------------');
+        var numbers = [1, 2, 3, 4, 5, 6];
+
+        //从索引为3的位置开始删除 2 个元素，并从该位置插入4个元素
+        var removed = numbers.splice(3, 2,  41, 42, 51, 52);
+
+        //[1, 2, 3, 41, 42, 51, 52, 6]
+        console.log(numbers);
+
+        //[4, 5]
+        console.log(removed);
+    })();
+
+
+//    (function() {
+//
+//    })();
+
+
+</script>
+
+
+</body>
+</html>

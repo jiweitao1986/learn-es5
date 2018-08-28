@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope Test</title>
+</head>
+<body>
+    
+    <script>
+
+        (function(){
+            console.log('////////////////////');
+            var x = 10;
+            function foo()
+            {
+                console.log(x);
+            }
+            function bar()
+            {
+                var x = 20;
+                foo();
+            }
+            bar();
+        })();
+
+        (function(){
+            console.log('////////////////////');
+            var x = 10;
+            function foo(y)
+            {
+                var z = 30;
+                function bar(q)
+                {
+                    return x + y +z +q;
+                }
+                return bar;
+            }
+
+            var bar = foo(20);
+            console.log(bar(40));
+        })();
+
+
+        (function(){
+            console.log('////////////////////');
+
+            var foo = 'abc';
+            with({
+                foo: 'bar'
+            }) {
+
+                //
+                function f()
+                {
+                    console.log(foo);
+                }
+
+                //输出与'bar'
+                (function() {
+                    console.log(foo);
+                })();
+
+                //输出'abc'
+                // 因为f声明会被提前到with前面，并不包含with的语法作用域
+                f();
+            }
+        })();
+
+
+        (function(){
+
+            console.log('////////////////////Try/Catch');
+
+            try {
+                var e = 10;
+                throw new Error("EEE");
+            } catch (e) {
+                function f()
+                {
+                    console.log(e);
+                }
+
+                (function() {
+                    console.log(e);
+                })
+
+                f();
+            }
+        })();
+    </script>
+    
+</body>
+</html>

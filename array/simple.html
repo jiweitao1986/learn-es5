@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Array Test</title>
+</head>
+<body>
+
+
+<a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array"> MDN Array参考 </a>
+
+<script>
+
+    var nums = [1, 2, 3];
+
+
+    console.log('////////////forEach////////////');
+    nums.forEach(function (num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+    });
+
+
+    console.log('////////////some////////////');
+
+    var isTwoExisted = nums.some(function(num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+        if (num === 2) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    console.log(isTwoExisted);
+
+
+    var isFiveExisted = nums.some(function(num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+        if (num === 5) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    console.log(isFiveExisted);
+
+
+    console.log('//////////// every ////////////');
+
+    console.log('///// gt two /////');
+    var isGtTwo = nums.every(function(num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+        if (num > 2) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    console.log(isGtTwo);
+
+    console.log('///// gt zero /////');
+    var isGtZero = nums.every(function(num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+        if (num > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    console.log(isGtZero);
+
+
+
+    console.log('//////////// map ////////////');
+    //不改变原始数组
+    var mappedNums = nums.map(function(num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+        return num * num;
+    });
+    console.log(mappedNums);
+    console.log(nums);
+
+
+    console.log('//////////// filter ////////////');
+    //不改变原始数组
+    var filteredNums = nums.filter(function(num, numIndex, numArr) {
+        console.log(numIndex + '=' + num);
+        return num > 2;
+    });
+    console.log(filteredNums);
+    console.log(nums);
+
+
+    console.log('//////////// concat ////////////');
+    var abc = ['a', 'b', 'c'];
+    var def = ['d', 'e', 'f'];
+    var contactedArr = nums.concat(abc, def);
+    console.log(contactedArr);
+
+
+    console.log('//////////// sort ////////////');
+
+
+
+</script>
+
+</body>
+</html>
