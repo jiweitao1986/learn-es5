@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>splice</title>
+  <meta charset="UTF-8">
+  <title>splice</title>
 </head>
+
 <body>
 
-<dl>
+  <dl>
     <dt>splice</dt>
-    <dd>splice() 方法通过删除现有元素和/或添加新元素来更改一个数组的内容。</dd>
-    <dd>splice是直接在原数组上删除、插入元素</dd>
-    <dd>splice返回由被删除元素组成的数组</dd>
+    <dd>splice会改变原来的数组</dd>
+    <dd>参数：start=开始索引，从0开始，deleteCount=要删除元素的个数，...items=要插入的元素，平铺展开，由逗号分隔</dd>
+    <dd>返回：由被删除元素组成的数组</dd>
     <dd>
-        <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank">
-            MDN Array splice 参考
-        </a>
+      <a
+        href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+        target="_blank"
+      >
+        MDN Array splice 参考
+      </a>
     </dd>
-</dl>
+  </dl>
 
 
-<script>
+  <script>
+    (function () {
 
+      // --------------------------------------------------------------------------------
+      // 从数组中删除元素
+      // --------------------------------------------------------------------------------
+      console.log('')
+      console.log('--------------------从数组中删除元素--------------------');
 
+      var numbers = [1, 2, 3, 4, 5, 6];
 
-    (function() {
+      //从第 3 位开始删除 2 个元素
+      // splice(start, deleteCount)
+      var removed = numbers.splice(3, 2);
 
-        console.log('-------------------- --------------------');
+      //[1, 2, 3, 6]
+      console.log(numbers);
 
-        var numbers = [1, 2, 3, 4, 5, 6];
-
-        //从第 3 位开始删除 2 个元素
-        var removed = numbers.splice(3, 2);
-
-        //[1, 2, 3, 6]
-        console.log(numbers);
-
-        //[4, 5]
-        console.log(removed);
+      //[4, 5]
+      console.log(removed);
 
     })();
 
 
-    (function() {
 
-        console.log('-------------------- --------------------');
-        var numbers = [1, 2, 3, 4, 5, 6];
+    (function () {
 
-        //从索引为3的位置开始删除 2 个元素，并从该位置插入4个元素
-        var removed = numbers.splice(3, 2,  41, 42, 51, 52);
+      // --------------------------------------------------------------------------------
+      // 向数组中插入元素
+      // --------------------------------------------------------------------------------
+      console.log('--------------------从数组中插入元素--------------------');
+      var numbers = [1, 2, 3, 4, 5, 6];
+      
+      // splice(start, deleteCount, ...items);
+      // 返回：由被删除元素组成的数组
+      numbers.splice(3, 1, 41, 42);
 
-        //[1, 2, 3, 41, 42, 51, 52, 6]
-        console.log(numbers);
-
-        //[4, 5]
-        console.log(removed);
+      //[1, 2, 3, 41, 42, 5, 6]
+      console.log(numbers);
     })();
-
-
-//    (function() {
-//
-//    })();
-
-
-</script>
+  </script>
 
 
 </body>
